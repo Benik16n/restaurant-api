@@ -1,7 +1,9 @@
 import { env as loadEnv } from "custom-env";
 import z, { ZodError } from "zod";
 
-const isProduction = process.env.APP_STAGE === "production ";
+process.env.APP_STAGE = process.env.APP_STAGE || "dev";
+
+const isProduction = process.env.APP_STAGE === "production";
 const isDevelopment = process.env.APP_STAGE === "dev";
 const isTesting = process.env.APP_STAGE === "test";
 
